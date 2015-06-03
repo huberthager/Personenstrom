@@ -5,5 +5,5 @@ public class Main {
 		Field f = new Field(10);
 
 	}
-
+	
 }

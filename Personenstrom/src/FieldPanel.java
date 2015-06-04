@@ -9,7 +9,7 @@ public class FieldPanel extends JFrame {
     JComboBox horGapComboBox;
     JComboBox verGapComboBox;
     JButton applyButton = new JButton("Apply gaps");
-    GridLayout experimentLayout = new GridLayout(0,2);
+    GridLayout experimentLayout = new GridLayout(2,2);
      
     public FieldPanel(String name) {
         super(name);
@@ -22,7 +22,7 @@ public class FieldPanel extends JFrame {
     }
      
     public void addComponentsToPane(final Container pane) {
-        initGaps();
+//        initGaps();
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
         JPanel controls = new JPanel();
@@ -40,7 +40,23 @@ public class FieldPanel extends JFrame {
         compsToExperiment.add(new JButton("Button 3"));
         compsToExperiment.add(new JButton("Long-Named Button 4"));
         compsToExperiment.add(new JButton("5"));
-        compsToExperiment.add(new JFrame("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
+        compsToExperiment.add(new JButton("ich Frame"));
          
         //Add controls to set up horizontal and vertical gaps
         controls.add(new Label("Horizontal gap:"));
@@ -52,6 +68,9 @@ public class FieldPanel extends JFrame {
          
         //Process the Apply gaps button press
         applyButton.addActionListener(new ActionListener(){
+            /* (non-Javadoc)
+             * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+             */
             public void actionPerformed(ActionEvent e){
                 //Get the horizontal gap value
                 String horGap = (String)horGapComboBox.getSelectedItem();

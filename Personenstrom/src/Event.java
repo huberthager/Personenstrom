@@ -9,6 +9,9 @@ public abstract class Event {
     return eventTime;
   }
 
+  /**
+   * Fuehrt Ereignis aus.
+   */
   abstract void processEvent();
 
 }

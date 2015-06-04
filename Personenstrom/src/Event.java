@@ -12,6 +12,7 @@ public abstract class Event {
   /**
    * Fuehrt Ereignis aus.
    */
-  abstract void processEvent();
+  abstract void processEvent(FutureEventList futureEventList, Person person,
+      double simTime, int CellSize);
 
 }

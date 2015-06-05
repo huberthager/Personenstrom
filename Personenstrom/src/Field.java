@@ -5,6 +5,8 @@ public class Field {
 
   private int length; // Seitenlaenge
   private List<Cell> cells; // Zellen in das Feld eingeteilt ist
+  private Cell targetCell;
+  private Cell sourceCell;
 
   /**
    * Initialisiert Feld.
@@ -25,15 +27,19 @@ public class Field {
     this.cells = new ArrayList<>();
     System.out.println(cells);
     initCells(); // Feld mit leeren Zellen initialisieren
-    Cell sourceCell = this.getCell(xSource, ySource);
-    Cell targetCell = this.getCell(xTarget, yTarget);
+    sourceCell = this.getCell(xSource, ySource);
+    targetCell = this.getCell(xTarget, yTarget);
     sourceCell.setSource(new Source(sourceCell));
     sourceCell.setIsOccupied(true);
     targetCell.setTarget(new Target(targetCell));
     targetCell.setIsOccupied(true);
   }
 
-  /**
+  public int getLength() {
+	return length;
+}
+
+/**
    * Getter fuer Feld auf dem bestimmte Person steht
    * 
    * @param p
@@ -65,8 +71,18 @@ public class Field {
     }
     return null;
   }
+  
 
-  /**
+
+  public Cell getTargetCell() {
+	return targetCell;
+}
+
+public Cell getSourceCell() {
+	return sourceCell;
+}
+
+/**
    * Initialisiert Zellen auf quadratisches Feld.
    * 
    * 

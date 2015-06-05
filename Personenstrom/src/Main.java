@@ -6,13 +6,13 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 
-	public static void main(String[] args) {
-		try {
-			SimObserver simob = new SimObserver();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//	public static void main(String[] args) {
+//		try {
+//			SimObserver simob = new SimObserver();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 //		final FieldPanel fp = new FieldPanel("FieldPanelDemo");
 //        /* Use an appropriate Look and Feel */
 //        try {
@@ -37,6 +37,11 @@ public class Main {
 //                fp.createAndShowGUI();
 //            }
 //        });
-    }
+//    }
+	
+	public static void main(String args[]){
+		Scheduler scheduler= new Scheduler(100);
+		scheduler.run();
+	}
 	
 }

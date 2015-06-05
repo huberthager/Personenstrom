@@ -13,6 +13,6 @@ public abstract class Event {
    * Fuehrt Ereignis aus.
    */
   abstract void processEvent(FutureEventList futureEventList, Person person,
-      double simTime, int CellSize);
+      double simTime, int cellLength,Field field);
 
 }

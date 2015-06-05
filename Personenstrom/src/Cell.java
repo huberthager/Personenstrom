@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Cell {
 
   private boolean isOccupied; // Besetzt?
@@ -81,5 +84,87 @@ public class Cell {
   public void setSource(Source source) {
     this.source = source;
   }
-
+  
+  public Set<Cell> getNeighbours(Field field){
+	  int x =this.getX();
+	  int y= this.getY();
+	  int length=field.getLength();
+	  
+	  Set<Cell> neighbours=new HashSet<>();
+	  //Ecken
+	 if(x==0 && y==0){
+		 neighbours.add(field.getCell(x, y+1));
+		  neighbours.add(field.getCell(x+1, y+1));
+		  neighbours.add(field.getCell(x+1, y));
+		 }
+	 if(x==length && y==0){
+		 neighbours.add(field.getCell(x-1, y));
+		 neighbours.add(field.getCell(x-1, y+1));
+		 neighbours.add(field.getCell(x, y+1));
+		 
+	 }
+	 if(x==length && y==length){
+		  neighbours.add(field.getCell(x, y-1));
+		  neighbours.add(field.getCell(x-1, y-1));
+		  neighbours.add(field.getCell(x-1, y));
+		 
+	 }
+	 if(x==0 && y==length){
+		 neighbours.add(field.getCell(x, y-1));
+		 neighbours.add(field.getCell(x+1, y));
+		  neighbours.add(field.getCell(x+1, y-1));
+		 
+	 }
+	 
+	 //Ränder
+	 if(y==0){
+		 neighbours.add(field.getCell(x, y+1));
+		  neighbours.add(field.getCell(x+1, y+1));
+		  neighbours.add(field.getCell(x+1, y));
+		  neighbours.add(field.getCell(x-1, y));
+		  neighbours.add(field.getCell(x-1, y+1));
+	 }
+	 
+	 if(x==length){
+		 neighbours.add(field.getCell(x, y+1));
+		 neighbours.add(field.getCell(x, y-1));
+		  neighbours.add(field.getCell(x-1, y-1));
+		  neighbours.add(field.getCell(x-1, y));
+		  neighbours.add(field.getCell(x-1, y+1));
+		 
+	 }
+	 if(y==length){
+		  neighbours.add(field.getCell(x+1, y));
+		  neighbours.add(field.getCell(x+1, y-1));
+		  neighbours.add(field.getCell(x, y-1));
+		  neighbours.add(field.getCell(x-1, y-1));
+		  neighbours.add(field.getCell(x-1, y));
+		 
+	 }
+	 if(x==0){
+		 neighbours.add(field.getCell(x, y+1));
+		  neighbours.add(field.getCell(x+1, y+1));
+		  neighbours.add(field.getCell(x+1, y));
+		  neighbours.add(field.getCell(x+1, y-1));
+		  neighbours.add(field.getCell(x, y-1));
+		 
+	 }
+//	  result.add(field.getCell(x, y+1));
+//	  result.add(field.getCell(x+1, y+1));
+//	  result.add(field.getCell(x+1, y));
+//	  result.add(field.getCell(x+1, y-1));
+//	  result.add(field.getCell(x, y-1));
+//	  result.add(field.getCell(x-1, y-1));
+//	  result.add(field.getCell(x-1, y));
+//	  result.add(field.getCell(x-1, y+1));
+	 return neighbours;
+  }
+  
+  public boolean isEqual(Cell other){
+	  if(this.getX()==other.getX() &&  this.getY()==other.getY()){
+		  return true;
+	  }
+	  return false;
+  }
+  
 }

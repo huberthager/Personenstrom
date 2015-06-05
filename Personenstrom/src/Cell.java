@@ -19,7 +19,11 @@ public class Cell {
     source = null;
   }
 
-  /**
+  public void setPerson(Person person) {
+	this.person = person;
+}
+
+/**
    * @return x -Koordinate
    */
   public int getX() {

@@ -30,6 +30,7 @@ public class Scheduler {
 												// kleinesten Zeit
 			currentEvent.processEvent( futureEventList,person, simTime,1,field);
 			futureEventList.removeFirst();
+			System.out.println(person.getLocation().getX()+" "+person.getLocation().getY());
 			
 	  
   }

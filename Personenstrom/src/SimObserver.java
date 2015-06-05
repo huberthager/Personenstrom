@@ -1,4 +1,4 @@
-// // download jxl library from http://sourceforge.net/projects/jexcelapi/?source=typ_redirect
+// // download jxl library from http://sourceforge.net/projects/jexcelapi/files/jexcelapi/2.6.12/
 //
 //import java.io.File;
 //import java.io.IOException;

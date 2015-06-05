@@ -13,7 +13,7 @@ public class FutureEventList {
   }
 
   public void removeFirst() {
-    this.priorityQueue.remove(0);
+    this.priorityQueue.poll();
   }
 
   public boolean isEmpty() {

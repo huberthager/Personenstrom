@@ -17,6 +17,9 @@ public class NextStep extends Event {
     Cell other = this.nextBestCell(person,field);
     that.setIsOccupied(false);
     other.setIsOccupied(true);
+    that.setPerson(null);
+    other.setPerson(person);
+    person.setLocation(other);
     double dist = this.euklidDist(that, other, cellLength);
     futureEventList.addEvent(new StepFinished(simTime + dist / velocity));
 
@@ -34,7 +37,7 @@ public class NextStep extends Event {
     double utilityValueNeighbour;
     for(Cell c : neighbours){
     	utilityValueNeighbour=this.euklidDist(c, field.getTargetCell(), 1)*(-1);
-    	if(utilityValueNeighbour>utilityValue){
+    	if(utilityValueNeighbour>utilityValue || utilityValue==0){
     		utilityValue=utilityValueNeighbour;
     		bestCell=c;
     	}

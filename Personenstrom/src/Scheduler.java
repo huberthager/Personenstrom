@@ -21,7 +21,13 @@ public class Scheduler {
     futureEventList.addEvent(new NextStep(simTime));
     }
 
-  public void run() {
+  
+  public double getSimTime() {
+	return simTime;
+}
+
+
+public void run() {
 	  Event currentEvent;
 	  
 	  while (!futureEventList.isEmpty() && simTime < endSimTime) {

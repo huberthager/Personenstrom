@@ -7,7 +7,7 @@ public class Source {
   }
 
   public Person createPerson1() {
-    return new Person(location, 1.3);
+    return new Person(location, 2.0);
 
   }
 

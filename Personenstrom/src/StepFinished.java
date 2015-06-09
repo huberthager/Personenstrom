@@ -10,7 +10,10 @@ public class StepFinished extends Event {
 	  if(!person.getLocation().equals(field.getTargetCell())){
 		  futureEventList.addEvent(new NextStep(eventTime));
 	  }
-
+	  else{
+		  field.getTargetCell().setPerson(null);
+		  
+	  }
   }
 
 }

@@ -25,7 +25,6 @@ public class Field {
     this.length = size;
     // this.gridsize = gridsize;
     this.cells = new ArrayList<>();
-    System.out.println(cells);
     initCells(); // Feld mit leeren Zellen initialisieren
     sourceCell = this.getCell(xSource, ySource);
     targetCell = this.getCell(xTarget, yTarget);

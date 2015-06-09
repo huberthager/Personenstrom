@@ -90,8 +90,7 @@ public class Cell {
   }
   
   public Set<Cell> getNeighbours(Field field){
-	  int x =this.getX();
-	  int y= this.getY();
+	  
 	  int length=field.getLength();
 	  
 	  Set<Cell> neighbours=new HashSet<>();
@@ -101,19 +100,19 @@ public class Cell {
 		  neighbours.add(field.getCell(x+1, y+1));
 		  neighbours.add(field.getCell(x+1, y));
 		 }
-	 if(x==length && y==0){
+	 else if(x==length && y==0){
 		 neighbours.add(field.getCell(x-1, y));
 		 neighbours.add(field.getCell(x-1, y+1));
 		 neighbours.add(field.getCell(x, y+1));
 		 
 	 }
-	 if(x==length && y==length){
+	 else if(x==length && y==length){
 		  neighbours.add(field.getCell(x, y-1));
 		  neighbours.add(field.getCell(x-1, y-1));
 		  neighbours.add(field.getCell(x-1, y));
 		 
 	 }
-	 if(x==0 && y==length){
+	 else if(x==0 && y==length){
 		 neighbours.add(field.getCell(x, y-1));
 		 neighbours.add(field.getCell(x+1, y));
 		  neighbours.add(field.getCell(x+1, y-1));
@@ -121,7 +120,7 @@ public class Cell {
 	 }
 	 
 	 //Ränder
-	 if(y==0){
+	 else if(y==0){
 		 neighbours.add(field.getCell(x, y+1));
 		  neighbours.add(field.getCell(x+1, y+1));
 		  neighbours.add(field.getCell(x+1, y));
@@ -129,7 +128,7 @@ public class Cell {
 		  neighbours.add(field.getCell(x-1, y+1));
 	 }
 	 
-	 if(x==length){
+	 else if(x==length){
 		 neighbours.add(field.getCell(x, y+1));
 		 neighbours.add(field.getCell(x, y-1));
 		  neighbours.add(field.getCell(x-1, y-1));
@@ -137,7 +136,7 @@ public class Cell {
 		  neighbours.add(field.getCell(x-1, y+1));
 		 
 	 }
-	 if(y==length){
+	 else if(y==length){
 		  neighbours.add(field.getCell(x+1, y));
 		  neighbours.add(field.getCell(x+1, y-1));
 		  neighbours.add(field.getCell(x, y-1));
@@ -145,22 +144,23 @@ public class Cell {
 		  neighbours.add(field.getCell(x-1, y));
 		 
 	 }
-	 if(x==0){
+	 else if(x==0){
 		 neighbours.add(field.getCell(x, y+1));
 		  neighbours.add(field.getCell(x+1, y+1));
 		  neighbours.add(field.getCell(x+1, y));
 		  neighbours.add(field.getCell(x+1, y-1));
 		  neighbours.add(field.getCell(x, y-1));
 		 
+	 }else {
+	  neighbours.add(field.getCell(x, y+1));
+	  neighbours.add(field.getCell(x+1, y+1));
+	  neighbours.add(field.getCell(x+1, y));
+	  neighbours.add(field.getCell(x+1, y-1));
+	  neighbours.add(field.getCell(x, y-1));
+	  neighbours.add(field.getCell(x-1, y-1));
+	  neighbours.add(field.getCell(x-1, y));
+	  neighbours.add(field.getCell(x-1, y+1));
 	 }
-//	  result.add(field.getCell(x, y+1));
-//	  result.add(field.getCell(x+1, y+1));
-//	  result.add(field.getCell(x+1, y));
-//	  result.add(field.getCell(x+1, y-1));
-//	  result.add(field.getCell(x, y-1));
-//	  result.add(field.getCell(x-1, y-1));
-//	  result.add(field.getCell(x-1, y));
-//	  result.add(field.getCell(x-1, y+1));
 	 return neighbours;
   }
   
